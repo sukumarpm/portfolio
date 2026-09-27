@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suku | Marantrix</title>
+  <style>
+    :root {
+      --bg: #0d0d0f;
+      --card-bg: rgba(22, 22, 26, 0.85);
+      --border: rgba(255, 255, 255, 0.08);
+      --text: #ffffff;
+      --muted: #a0a0ab;
+      --gradient-btn: linear-gradient(90deg, #ff9a9e 0%, #fecfef 99%, #a1c4fd 100%);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 16px;
+    }
+
+    .wrapper {
+      width: 100%;
+      max-width: 390px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* Top Floating Nav / Badge */
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 4px;
+    }
+    .status-badge {
+      font-size: 12px;
+      color: #34d399;
+      background: rgba(52, 211, 153, 0.1);
+      padding: 4px 10px;
+      border-radius: 20px;
+      border: 1px solid rgba(52, 211, 153, 0.2);
+    }
+
+    /* Main Glass Card */
+    .profile-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 24px 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .name {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+    }
+
+    .handle {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 4px;
+      margin-bottom: 14px;
+    }
+
+    .bio {
+      color: #d1d1d6;
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    /* Stats Grid */
+    .stats-row {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+      margin-bottom: 20px;
+    }
+    .stat-item { text-align: left; }
+    .stat-val { font-size: 18px; font-weight: 700; }
+    .stat-lbl { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+    /* Buttons */
+    .btn-gradient {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      text-align: center;
+      background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+      color: #000;
+      font-weight: 700;
+      font-size: 15px;
+      border-radius: 14px;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(253, 160, 133, 0.3);
+      transition: transform 0.15s ease;
+    }
+    .btn-gradient:active { transform: scale(0.98); }
+
+    /* Works Section */
+    .section-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--muted);
+      margin: 8px 0 4px 4px;
+    }
+
+    .work-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 16px;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: transform 0.15s;
+    }
+    .work-card:active { transform: scale(0.98); }
+    .work-header { display: flex; justify-content: space-between; align-items: center; }
+    .work-title { font-size: 16px; font-weight: 600; }
+    .work-badge { font-size: 11px; background: rgba(255,255,255,0.08); padding: 3px 8px; border-radius: 12px; color: #a0a0ab; }
+    .work-desc { font-size: 13px; color: var(--muted); margin-top: 6px; }
+
+    /* Contact Links */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .contact-btn {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    
+    <!-- Top Nav -->
+    <div class="top-nav">
+      <span class="status-badge">● Available for Projects</span>
+    </div>
+
+    <!-- Hero Card (Styled like Oliver Bennet sample) -->
+    <div class="profile-card">
+      <h1 class="name">Suku</h1>
+      <p class="handle">Founder @ Marantrix</p>
+      <p class="bio">Freelance Product Developer focused on building high-impact iOS, Android, and Web applications.</p>
+
+      <div class="stats-row">
+        <div class="stat-item">
+          <div class="stat-val">2+</div>
+          <div class="stat-lbl">Live Products</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-val">Full-Stack</div>
+          <div class="stat-lbl">Mobile & Web</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-val">Global</div>
+          <div class="stat-lbl">Clients</div>
+        </div>
+      </div>
+
+      <!-- Save Contact Link -->
+      <a href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0AVERSION%3A3.0%0AFN%3ASuku%20(Marantrix)%0ATEL%3A%2B639766347559%0AEMAIL%3Asuku%40marantrix.com%0AURL%3Ahttps%3A%2F%2Fmarantrix.com%0AEND%3AVCARD" 
+         download="Suku-Marantrix.vcf" 
+         class="btn-gradient">
+        Save Contact
+      </a>
+    </div>
+
+    <div class="section-title">Featured Work</div>
+
+    <!-- Work 1: Eccentro -->
+    <a href="https://eccentroweb.com/" target="_blank" class="work-card">
+      <div class="work-header">
+        <span class="work-title">Eccentro</span>
+        <span class="work-badge">Mobile App</span>
+      </div>
+      <p class="work-desc">E-commerce mobile app platform and web companion.</p>
+    </a>
+
+    <!-- Work 2: Hominode -->
+    <a href="https://hominode.com" target="_blank" class="work-card">
+      <div class="work-header">
+        <span class="work-title">Hominode</span>
+        <span class="work-badge">Upcoming Demo</span>
+      </div>
+      <p class="work-desc">Next-generation web application ecosystem.</p>
+    </a>
+
+    <div class="section-title">Direct Connect</div>
+
+    <!-- Contact Row -->
+    <div class="contact-grid">
+      <a href="tel:+639766347559" class="contact-btn">📞 Call (+63)</a>
+      <a href="https://wa.me/917200343219" target="_blank" class="contact-btn">💬 WhatsApp</a>
+    </div>
+
+    <!-- Company Footer -->
+    <a href="https://marantrix.com" target="_blank" class="work-card" style="text-align: center; margin-top: 4px;">
+      <span style="font-size: 13px; color: var(--muted);">Visit <strong style="color: #fff;">marantrix.com</strong> →</span>
+    </a>
+
+  </div>
+
+</body>
+</html>
