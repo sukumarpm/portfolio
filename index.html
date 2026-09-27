@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <title>Suku | Marantrix</title>
   <style>
     :root {
@@ -21,8 +21,9 @@
       font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
       display: flex;
       justify-content: center;
+      align-items: center;
       min-height: 100vh;
-      padding: 16px;
+      padding: 12px;
     }
 
     .wrapper {
@@ -30,15 +31,15 @@
       max-width: 390px;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 10px;
     }
 
     .status-badge {
       align-self: flex-start;
-      font-size: 12px;
+      font-size: 11px;
       color: #34d399;
       background: rgba(52, 211, 153, 0.1);
-      padding: 4px 12px;
+      padding: 3px 10px;
       border-radius: 20px;
       border: 1px solid rgba(52, 211, 153, 0.2);
     }
@@ -48,15 +49,15 @@
       background: var(--card-bg);
       backdrop-filter: blur(16px);
       border: 1px solid var(--border);
-      border-radius: 28px;
+      border-radius: 22px;
       overflow: hidden;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
     }
 
-    /* Hero Image Container with Top Framing */
+    /* Reduced Hero Image Height */
     .hero-image-container {
       width: 100%;
-      height: 380px; /* Increased height so head isn't cropped */
+      height: 200px;
       position: relative;
       background: #111115;
     }
@@ -65,7 +66,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: top center; /* Focuses alignment on your face/head */
+      object-position: top center;
     }
 
     .hero-image-container::after {
@@ -74,16 +75,16 @@
       bottom: 0;
       left: 0;
       right: 0;
-      height: 100px;
+      height: 60px;
       background: linear-gradient(to top, var(--card-bg), transparent);
     }
 
     .card-body {
-      padding: 0 20px 24px;
+      padding: 0 16px 16px;
     }
 
     .name {
-      font-size: 30px;
+      font-size: 24px;
       font-weight: 700;
       letter-spacing: -0.5px;
       line-height: 1.1;
@@ -91,82 +92,93 @@
 
     .handle {
       color: var(--muted);
-      font-size: 14px;
-      margin-top: 4px;
-      margin-bottom: 14px;
+      font-size: 13px;
+      margin-top: 2px;
+      margin-bottom: 8px;
     }
 
     .bio {
       color: #d1d1d6;
-      font-size: 14px;
-      line-height: 1.5;
-      margin-bottom: 20px;
+      font-size: 12px;
+      line-height: 1.4;
+      margin-bottom: 12px;
     }
 
     .stats-row {
       display: flex;
       justify-content: space-between;
       border-top: 1px solid var(--border);
-      padding-top: 16px;
-      margin-bottom: 20px;
+      padding-top: 10px;
+      margin-bottom: 12px;
     }
-    .stat-val { font-size: 18px; font-weight: 700; }
-    .stat-lbl { font-size: 12px; color: var(--muted); margin-top: 2px; }
+    .stat-val { font-size: 15px; font-weight: 700; }
+    .stat-lbl { font-size: 11px; color: var(--muted); margin-top: 1px; }
 
     .btn-gradient {
       display: block;
       width: 100%;
-      padding: 14px;
+      padding: 11px;
       text-align: center;
       background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
       color: #000;
       font-weight: 700;
-      font-size: 15px;
-      border-radius: 14px;
+      font-size: 14px;
+      border-radius: 12px;
       text-decoration: none;
-      box-shadow: 0 4px 15px rgba(253, 160, 133, 0.3);
-      transition: transform 0.15s ease;
+      box-shadow: 0 4px 12px rgba(253, 160, 133, 0.25);
     }
     .btn-gradient:active { transform: scale(0.98); }
 
     .section-title {
-      font-size: 12px;
+      font-size: 11px;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.8px;
       color: var(--muted);
-      margin: 8px 0 4px 4px;
+      margin: 2px 0 0 2px;
+    }
+
+    /* 2-Column Work Grid */
+    .works-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
     }
 
     .work-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 16px;
+      border-radius: 14px;
+      padding: 10px 12px;
       text-decoration: none;
       color: inherit;
       display: block;
-      transition: transform 0.15s;
     }
     .work-card:active { transform: scale(0.98); }
-    .work-header { display: flex; justify-content: space-between; align-items: center; }
-    .work-title { font-size: 16px; font-weight: 600; }
-    .work-badge { font-size: 11px; background: rgba(255,255,255,0.08); padding: 3px 8px; border-radius: 12px; color: #a0a0ab; }
-    .work-desc { font-size: 13px; color: var(--muted); margin-top: 6px; }
+    .work-header { display: flex; flex-direction: column; gap: 2px; }
+    .work-title { font-size: 14px; font-weight: 600; }
+    .work-badge { font-size: 10px; color: var(--muted); }
 
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    /* Compact 4-Column Action Strip */
+    .contact-grid { 
+      display: grid; 
+      grid-template-columns: repeat(4, 1fr); 
+      gap: 6px; 
+    }
+
     .contact-btn {
       background: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 12px;
+      border-radius: 12px;
+      padding: 10px 4px;
       color: var(--text);
       text-decoration: none;
-      font-size: 13px;
+      font-size: 11px;
       font-weight: 500;
+      text-align: center;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      gap: 6px;
+      gap: 4px;
     }
   </style>
 </head>
@@ -179,7 +191,6 @@
     <!-- Hero Card -->
     <div class="profile-card">
       <div class="hero-image-container">
-        <!-- Match this file name with your uploaded photo on GitHub -->
         <img src="711467986_27235251946084208_9158738918060143755_n.jpg" alt="Suku" class="hero-image" />
       </div>
 
@@ -203,7 +214,6 @@
           </div>
         </div>
 
-        <!-- Download vCard Button with updated email -->
         <a href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0AVERSION%3A3.0%0AFN%3ASuku%20(Marantrix)%0ATEL%3A%2B639766347559%0AEMAIL%3Amarantrix%40gmail.com%0AURL%3Ahttps%3A%2F%2Fmarantrix.com%0AEND%3AVCARD" 
            download="Suku-Marantrix.vcf" 
            class="btn-gradient">
@@ -214,36 +224,42 @@
 
     <div class="section-title">Featured Work</div>
 
-    <a href="https://eccentroweb.com/" target="_blank" class="work-card">
-      <div class="work-header">
-        <span class="work-title">Eccentro</span>
-        <span class="work-badge">Mobile App</span>
-      </div>
-      <p class="work-desc">E-commerce mobile app platform and web companion.</p>
-    </a>
+    <!-- Works Grid -->
+    <div class="works-grid">
+      <a href="https://eccentroweb.com/" target="_blank" class="work-card">
+        <div class="work-header">
+          <span class="work-title">Eccentro →</span>
+          <span class="work-badge">E-Commerce App</span>
+        </div>
+      </a>
 
-    <a href="https://hominode.com" target="_blank" class="work-card">
-      <div class="work-header">
-        <span class="work-title">Hominode</span>
-        <span class="work-badge">Upcoming Demo</span>
-      </div>
-      <p class="work-desc">Next-generation web application ecosystem.</p>
-    </a>
-
-    <div class="section-title">Direct Connect</div>
-
-    <div class="contact-grid">
-      <a href="tel:+639766347559" class="contact-btn">📞 Call (+63)</a>
-      <a href="https://wa.me/917200343219" target="_blank" class="contact-btn">💬 WhatsApp</a>
+      <a href="https://hominode.com" target="_blank" class="work-card">
+        <div class="work-header">
+          <span class="work-title">Hominode →</span>
+          <span class="work-badge">Upcoming Demo</span>
+        </div>
+      </a>
     </div>
 
-    <a href="mailto:marantrix@gmail.com" class="contact-btn" style="margin-top: 10px;">
-      ✉️ Email (marantrix@gmail.com)
-    </a>
-
-    <a href="https://marantrix.com" target="_blank" class="work-card" style="text-align: center; margin-top: 10px;">
-      <span style="font-size: 13px; color: var(--muted);">Visit <strong style="color: #fff;">marantrix.com</strong> →</span>
-    </a>
+    <!-- Quick Action Strip -->
+    <div class="contact-grid">
+      <a href="tel:+639766347559" class="contact-btn">
+        <span>📞</span>
+        <span>Call</span>
+      </a>
+      <a href="https://wa.me/917200343219" target="_blank" class="contact-btn">
+        <span>💬</span>
+        <span>WhatsApp</span>
+      </a>
+      <a href="mailto:marantrix@gmail.com" class="contact-btn">
+        <span>✉️</span>
+        <span>Email</span>
+      </a>
+      <a href="https://marantrix.com" target="_blank" class="contact-btn">
+        <span>🌐</span>
+        <span>Website</span>
+      </a>
+    </div>
 
   </div>
 
