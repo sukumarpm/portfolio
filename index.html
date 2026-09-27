@@ -43,7 +43,7 @@
       border: 1px solid rgba(52, 211, 153, 0.2);
     }
 
-    /* Hero Card with Integrated Banner Image */
+    /* Hero Card */
     .profile-card {
       background: var(--card-bg);
       backdrop-filter: blur(16px);
@@ -53,10 +53,10 @@
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
     }
 
-    /* Full-Width Cover Image Container */
+    /* Hero Image Container with Top Framing */
     .hero-image-container {
       width: 100%;
-      height: 380px; /* Increased height so head isn't cropped */
+      height: 380px;
       position: relative;
       background: #111115;
     }
@@ -65,10 +65,9 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: top center; /* Focuses alignment on your face/head */
+      object-position: top center;
     }
 
-    /* Dark gradient overlay blending image into text */
     .hero-image-container::after {
       content: '';
       position: absolute;
@@ -180,8 +179,8 @@
     <!-- Hero Card -->
     <div class="profile-card">
       <div class="hero-image-container">
-        <!-- Change cover.jpg to match your uploaded image name -->
-        <img src="711467986_27235251946084208_9158738918060143755_n.jpg" alt="Suku" class="hero-image" />
+        <!-- Match this file name with your uploaded photo on GitHub -->
+        <img src="cover.jpg" alt="Suku" class="hero-image" />
       </div>
 
       <div class="card-body">
@@ -204,7 +203,8 @@
           </div>
         </div>
 
-        <a href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0AVERSION%3A3.0%0AFN%3ASuku%20(Marantrix)%0ATEL%3A%2B639766347559%0AEMAIL%3Asuku%40marantrix.com%0AURL%3Ahttps%3A%2F%2Fmarantrix.com%0AEND%3AVCARD" 
+        <!-- Download vCard Button with updated email -->
+        <a href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0AVERSION%3A3.0%0AFN%3ASuku%20(Marantrix)%0ATEL%3A%2B639766347559%0AEMAIL%3Amarantrix%40gmail.com%0AURL%3Ahttps%3A%2F%2Fmarantrix.com%0AEND%3AVCARD" 
            download="Suku-Marantrix.vcf" 
            class="btn-gradient">
           Save Contact
@@ -237,7 +237,11 @@
       <a href="https://wa.me/917200343219" target="_blank" class="contact-btn">💬 WhatsApp</a>
     </div>
 
-    <a href="https://marantrix.com" target="_blank" class="work-card" style="text-align: center;">
+    <a href="mailto:marantrix@gmail.com" class="contact-btn" style="margin-top: 10px;">
+      ✉️ Email (marantrix@gmail.com)
+    </a>
+
+    <a href="https://marantrix.com" target="_blank" class="work-card" style="text-align: center; margin-top: 10px;">
       <span style="font-size: 13px; color: var(--muted);">Visit <strong style="color: #fff;">marantrix.com</strong> →</span>
     </a>
 
